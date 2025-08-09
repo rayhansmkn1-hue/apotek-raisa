@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apotik Raisa - Kesehatan Anda Prioritas Kami</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-pills"></i>
+                    <span>Apotik Raisa</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- Tambahkan tombol mode -->
+                <button id="toggleMode" class="mode-toggle" title="Ganti Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Apotik Raisa</h1>
+            <p>Menyediakan obat berkualitas dan layanan kesehatan terpercaya untuk Anda dan keluarga</p>
+            <button class="cta-button" onclick="scrollToSection('products')">Lihat Produk</button>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <h2>Cari Obat atau Vitamin</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Masukkan nama obat atau vitamin...">
+                <button onclick="searchProducts()"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Produk Kami</h2>
+            <div class="product-categories">
+                <button class="category-btn active" onclick="filterProducts(event || window.event, 'all')">Semua</button>
+                <button class="category-btn" onclick="filterProducts(event || window.event, 'obat')">Obat</button>
+                <button class="category-btn" onclick="filterProducts(event || window.event, 'vitamin')">Vitamin</button>
+                <button class="category-btn" onclick="filterProducts(event || window.event, 'alat')">Alat Kesehatan</button>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Layanan Kami</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Konsultasi Apoteker</h3>
+                    <p>Dapatkan konsultasi langsung dengan apoteker profesional kami untuk solusi kesehatan Anda.</p>
+                    <span class="service-badge">Gratis</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-prescription-bottle-medical"></i>
+                    <h3>Pelayanan Resep</h3>
+                    <p>Pengisian resep dokter dengan cepat, akurat, dan aman sesuai kebutuhan Anda.</p>
+                    <span class="service-badge">Cepat</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-truck-fast"></i>
+                    <h3>Antar Obat</h3>
+                    <p>Layanan pengantaran obat ke rumah Anda dengan proses mudah dan aman.</p>
+                    <span class="service-badge">Langsung</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heart-pulse"></i>
+                    <h3>Cek Kesehatan</h3>
+                    <p>Pemeriksaan tekanan darah, gula darah, dan kolesterol dengan alat modern.</p>
+                    <span class="service-badge">Tersedia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Apotik Raisa berdiri sejak 2010 dengan komitmen untuk menyediakan obat-obatan berkualitas dan layanan kesehatan terbaik bagi masyarakat. Kami memiliki tim apoteker yang berpengalaman dan berdedikasi untuk membantu kebutuhan kesehatan Anda.</p>
+                    <p>Dengan stok obat yang lengkap dan sistem manajemen yang modern, kami siap melayani Anda dengan cepat dan tepat. Kepercayaan Anda adalah prioritas kami.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Tahun Pengalaman</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5000+</h3>
+                        <p>Pelanggan Puas</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1000+</h3>
+                        <p>Produk Tersedia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>JLN Abdul Hamidhan RT 7</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>0859 1961 30394</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Sabtu: 08:00 - 21:00</p>
+                            <p>Minggu: 09:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                <form action="kirim.php" method="POST">
+                 <input type="text" name="name" placeholder="Nama Anda" required>
+                 <input type="email" name="email" placeholder="Email Anda" required>
+                 <input type="text" name="subject" placeholder="Subjek" required>
+                 <textarea name="message" placeholder="Pesan Anda" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+                </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Apotik Raisa</h3>
+                    <p>Menyediakan obat berkualitas dan layanan kesehatan terpercaya untuk Anda dan keluarga.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Apotik Raisa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
